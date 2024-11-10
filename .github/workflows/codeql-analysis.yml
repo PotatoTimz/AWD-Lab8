@@ -6,15 +6,23 @@ on:
     pull_request:
         branches: [main]
 
+permissions:
+  contents: read 
+  actions: write 
+  issues: write  
+  pull-requests: write  
+
 jobs:
     analyze:
         runs-on: ubuntu-latest
         steps:
           - name: Checkout code
             uses: actions/checkout@v4
+
           - name: Initialize CodeQL
             uses: github/codeql-action/init@v1
             with:
                 languages: python
+
           - name: Perform CodeQL Analysis
             uses: github/codeql-action/analyze@v1
