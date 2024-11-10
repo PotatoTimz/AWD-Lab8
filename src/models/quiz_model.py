@@ -14,7 +14,7 @@ class QuizModel(db.Model):
 
     # INCOMPLETE: Define table columns
     # TODO: Define an integer primary key column named `id`
-    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True) 
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
 
     # TODO: Define a string column named `title` that cannot be null
     title: Mapped[str] = mapped_column(nullable=False)
@@ -24,14 +24,14 @@ class QuizModel(db.Model):
 
     def __init__(self, title, questions):
         # INCOMPLETE: Initialize the model with title and questions
-        # TODO: Assign `self.title` and `self.questions` 
+        # TODO: Assign `self.title` and `self.questions`
         # with `title` and `questions`
         self.title = title
         self.questions = questions
 
     def save(self):
         # INCOMPLETE: Save the quiz to the database
-        # TODO: Use `db.session.add(self)` and `db.session.commit()` 
+        # TODO: Use `db.session.add(self)` and `db.session.commit()`
         # to save the instance
         db.session.add(self)
         db.session.commit()
